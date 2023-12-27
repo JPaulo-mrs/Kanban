@@ -1,11 +1,19 @@
 /* Estilos para smartphones */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
 *   {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: 'aileron';
         font-size: 10px;
+
+        /* Ocultar scrollbar */
+        scrollbar-width: none; /* Para Firefox */
+    }
+
+    /* Ocultar scrollbar para navegadores baseados em Webkit, como Chrome/Safari */
+    ::-webkit-scrollbar {
+        display: none;
     }
 
     #dialog, #cardEx {
@@ -53,16 +61,17 @@
 
     .lanes {
         display: flex;
-        flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
+        text-align: start;
         justify-content: center;
         gap: 1.6rem;
-        padding: 2.4rem;
-        padding-left: 35rem;
+    
+        padding: 2.4rem 3.2rem;
         border-radius: .5rem;
-        overflow-x: auto;
-        overflow-y: scroll;
-        white-space: nowrap;
+    
+        overflow: scroll;
+        height: 100%;
+    
         background-color: #495766;
     }
 
@@ -91,6 +100,8 @@
         position: absolute;
         top: 50%;
         transform: translate(0%, -50%);
+
+        max-width: 71.8181818181818181818181%;
     }
 
     .taskCircle {
@@ -98,9 +109,9 @@
         width: 1.5rem;
         height: 1.5rem;
         border-radius: 50%;
-        position: relative;
-        top: initial;
-        transform: none;
+        position: absolute;
+        top: 50%;
+        transform: translate(650%, -50%);
     }
 
     .taskbutton {
@@ -109,9 +120,12 @@
         width: 100%;
         height: 3.5rem;
         border-radius: 5rem;
+    
+        position: relative;
+    
         cursor: pointer;
         border: none;
-        order: initial;
+        order: 1;
     }
 
     .taskbutton:hover {
@@ -127,9 +141,9 @@
         background-size: 50% .2rem,.2rem 50%;
         background-repeat:no-repeat;
         border-radius: 50%;
-        position: relative;
-        top: initial;
-        transform: none;
+        position: absolute;
+        top: 50%;
+        transform: translate(265%, -50%);
     }
 
     .is-dragging {
@@ -140,44 +154,6 @@
         color: white;
     }
 
-    .dialog {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-      }
-
-    .dialog-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #fff;
-        padding: 2rem;
-        border-radius: .8rem;
-        
-        border: .5rem solid #f6a52d;
-    }
-
-    .dialog-text {
-        font-family: Inika;
-        font-size: 1.6rem;
-        font-weight: 400;
-        line-height: 2rem;
-        letter-spacing: 0em;
-    }
-
-    .dialog-button {
-        font-family: Inika;
-        width: 100%;
-        height: 3rem;
-        border-radius: 5rem;
-        float: none;
-    }
-
     .taskname-box {
         font-family: Inika;
         font-size: 1.6rem;
@@ -185,6 +161,9 @@
         line-height: 2rem;
         letter-spacing: 0em;
         border-radius: .5rem;
+        width: 12.5rem;
+        height: 2.5rem;
+        border: none;
     }
 
     .item {
@@ -217,88 +196,123 @@
     }
 
     .cardEx-content {
-        width: 90%;
-        height: 90%;
-        top: 0;
-        left: 0;
-
-        margin: auto;
-
-        transform: none;
+        position: absolute;
+        width: 70rem;
+        height: 47rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
         padding: 2rem;
         border-radius: .8rem;
-        background-color: #FFFFFF;
-    }
-
-    .tituloCard {
+      }
+    
+      .tituloCard{
         font-family: Inika;
-        font-size: 3rem;
+        font-size: 5rem;
         text-align: left;
-    }
-
-    .textCard {
+        width: 90%;
+        height: 6rem;
+        box-sizing: border-box;
+        border: none;
+        resize: none;
+      }
+    
+      .textCard{
         font-family: Inika;
-        font-size: 1.6rem;
-        text-align: left;
-        padding: 0px 10px;
-    }
-
-    .flex-CR {
+        font-size: 2rem;
+        text-align: left; 
+        padding: 0px 10px;   
+      }
+    
+      .flex-CR{
         display: flex;
         flex-direction: column-reverse;
-        justify-content: center;
-    }
-
-    .flex-C {
+        justify-content: start;
+      }
+    
+      .flex-C{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-    }
+        justify-content: start;
 
-    .flex-R {
+        align-items: flex-start;
+        margin-bottom: auto;
+
+        width: 100%;
+      }
+    
+      .flex-R{
         display: flex;
         flex-direction: row;
-        justify-content: center;
-    }
 
-    .containerL {
-        background: #ffffff;
         width: 100%;
-        height: auto;
+        height: 90%;
+      }
+    
+      .containerL{
+        background: #ffffff;
+        width: 60%;
+        height: 80%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+        justify-content: top;
+        align-items: top;
 
-    .containerR {
+        margin-right: 1.5rem;
+        float: left;
+      }
+      .containerR{
         background: #ffffff;
-        width: 100%;
-        height: auto;
+        width: 30%;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: top;
         align-items: center;
-    }
 
-    .exitCard {
+        margin-left: 1.5rem;
+      }
+      .exitCard {
+        background: #fff;
         width: 2rem;
         height: 2rem;
         border-radius: 3rem;
         cursor: pointer;
-        float: none;
+        float: right;
+        border: none;
         font-family: Inika;
         font-size: 1.5rem;
-        border: .1rem solid #000000;
-    }
-
-    .exitCard:hover {
+      }
+    
+      .exitCard :focus{
+        outline: thin dotted;
+        outline: 0px auto -webkit-focus-ring-color;
+        outline-offset: 0px;
+      }
+    
+      .exitCard:hover {
         background-color: #d5d5d5;
-    }
+      }
+      
+      .exitLogin {
+        background: #495766;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 3rem;
+        cursor: pointer;
+        float: right;
+        border: none;
+        font-family: Inika;
+        font-size: 1.5rem;
+      }
+      .exitLogin:hover {
+        background-color: #363f48;
+      }
 
-    .boxComentario {
+      .boxComentario{
         width: 100%;
-        height: auto;
+        height: 12rem;
         padding: 1.2rem 2rem;
         box-sizing: border-box;
         border: 0.2rem solid #ccc;
@@ -306,11 +320,10 @@
         background-color: #f8f8f8;
         font-size: 1.6rem;
         resize: none;
-    }
-
-    .boxAtividade {
+      }
+      .boxAtividade{
         width: 100%;
-        height: auto;
+        height: 3rem;
         padding: 1.2rem 2rem;
         box-sizing: border-box;
         border: 0.2rem solid #ccc;
@@ -318,11 +331,10 @@
         background-color: #f8f8f8;
         font-size: 1.6rem;
         resize: none;
-    }
-
-    .boxResponsavel {
+      }
+      .boxResponsavel{
         width: 100%;
-        height: auto;
+        height: 3rem;
         padding: 0.6rem 2rem;
         box-sizing: border-box;
         border: 0.2rem solid #ccc;
@@ -330,11 +342,10 @@
         background-color: #f8f8f8;
         font-size: 1.6rem;
         resize: none;
-    }
-
-    .data {
-        width: 100%;
-        height: auto;
+      }
+      .data{
+        width: 15rem;
+        height: 3rem;
         padding: 1.2rem 2rem;
         box-sizing: border-box;
         border: 0.2rem solid #ccc;
@@ -342,28 +353,147 @@
         background-color: #f8f8f8;
         font-size: 1.6rem;
         resize: none;
-    }
-
-    .setorButton {
+      }
+    
+      .setorButton {
+        background: #D9D9D9;
+        padding: 1rem;
         width: 100%;
-        height: 3.5rem;
+        height: 3rem;
         border-radius: 5rem;
         border: none;
         position: relative;
+    
         cursor: pointer;
-    }
-
-    .setorButton:hover {
-        background-color: #9ba39b;
-    }
-
-    .setortext {
+      }
+    
+      .setortext {
         font-family: Inika;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 400;
-        line-height: 2rem;
+        line-height: 0rem;
         letter-spacing: 0em;
-        text-align: center;
+        text-align: center;   
+        position: center;
+      }
+
+      .removeButton {
+        background: #fff;
+        padding: 1rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 5rem;
+        border: none;
         position: relative;
-    }  
+    
+        cursor: pointer;
+      }
+      .removeButton:hover {
+        background-color: #e53224;
+      }
+    
+      .logo {
+        width: 3.5rem;
+        height: 3.75rem;
+        float: right;
+      }
+      .deletarImg {
+        width: 2rem;
+        height: 2rem;
+      }
+    
+      .confirmar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    
+      .confirmar-content {
+        position: absolute;
+        width: 30rem;
+        height: 10rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 2rem;
+        border-radius: .8rem;
+      }
+    
+      .textConfirmar{
+        font-family: Inika;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.8rem;
+        letter-spacing: 0em;
+        text-align: center;   
+        position: center;
+      }
+      .confirmarButton {
+        background: transparent;
+        padding: 1rem;
+        width: 12.5rem;
+        height: 3.5rem;
+        border-radius: 5rem;
+        border: 0.1rem solid #2b2b2b;
+        position: relative;
+        cursor: pointer;
+      }
+      .confirmarButton:hover {
+        background-color: #e53224;
+      }
+      .cancelarButton {
+        background: transparent;
+        padding: 1rem;
+        width: 12.5rem;
+        height: 3.5rem;
+        border-radius: 5rem;
+        border: 0.1rem solid #2b2b2b;
+        position: right;
+        cursor: pointer;
+      }
+      .cancelarButton:hover {
+        background-color: #D9D9D9;
+      }
+    
+    
+      .backgroundColuna{
+        background: #D9D9D9;
+        width: 100%;
+        height: 3rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+      }
+    
+      .moverButton{
+        background: #D9D9D9;
+        padding: 0.8rem;
+        width: 5rem;
+        height: 2.8rem;
+        border-radius: 5rem;
+        border: none;
+        position: relative;
+    
+        cursor: pointer;
+      }
+    
+      .movertext {
+        font-family: Inika;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 3.5rem;
+        letter-spacing: 0em;
+        text-align: center;   
+        position: center;
+      }
+    
+      .moverImg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
 }
