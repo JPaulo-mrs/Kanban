@@ -8,9 +8,15 @@
     <link rel="shortcut icon" type="image/jpg" href="Images/logo positiva vertical.png"/>
     <!-- Inclusão do arquivo de estilo CSS -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Inclusão dos arquivos de estilo CSS -->
+    <link rel="stylesheet" href="style_tablet.css" />
+    <link rel="stylesheet" href="style_mobile.css" />
 
     <!-- Inclusão do script para funcionalidades de arrastar e soltar -->
     <script src="dragdrop.js" defer></script>
+
+    <!-- Inclusão do script para arrastar e soltar para dispositivos moveis -->
+    <script src="DragDropTouch.js"></script>
 
     <!-- Inclusão do script para funcionalidades do botão de adicionar tarefa -->
     <script src="taskbutton.js" defer></script>
@@ -22,8 +28,13 @@
     <!-- Conteúdo principal -->
     
     <div class="board">
+      <button class="exitLogin" onclick="closeContainer()">
+        <img class="deletarImg" src="Images/sairL.png" alt="">
+      </button>
       <!-- Logo da Focus -->
-      <img class="logo-image" src="images/logo negativa vertical.png" alt="Logo Focus Consultoria">
+        <img class="logo-image" src="images/logo negativa vertical.png" alt="Logo Focus Consultoria">
+      
+      
 
       <p class="board-name">QUADRO DE GERENCIAMENTO DE ATIVIDADES</p>
       
@@ -33,7 +44,7 @@
       <div class="lanes">
         
         <!-- Coluna BACKLOG -->
-        <div class="coluna" id="todo-lane">
+        <div class="coluna" id="Backlog">
           <h3 class="columnHeader">BACKLOG</h3>
 
           <!-- Lista de tarefas -->
@@ -70,18 +81,19 @@
         </div>
 
          <!-- Outras colunas (EM ANDAMENTO, CONCLUÍDO, PENDÊNCIAS) -->
-        <div class="coluna">
+        <div class="coluna" id="Em andamento">
           <h3 class="columnHeader">EM ANDAMENTO</h3>
         </div>
 
-        <div class="coluna">
+        <div class="coluna" id="Review">
           <h3 class="columnHeader">REVIEW</h3>
         </div>
 
-        <div class="coluna">
+        <div class="coluna" id="Concluido">
           <h3 class="columnHeader">CONCLUÍDO</h3>
         </div>
       </div>
+      
     </div>
   </body>
 </html>
@@ -89,14 +101,12 @@
 <!--Card expandido-->
 <div id="cardEx" class="cardEx">
   <div class="cardEx-content flex-CR">
-    
     <div>
       <img class="logo" src="Images/logo positiva vertical.png" alt="">
-      <button class="removeButton" onclick="deletar()">
+      <button class="removeButton" onclick="confirmarBox()">
         <img class="deletarImg" src="Images/lixo.png" alt="">
       </button>
     </div>
-    
     <div class="flex-R">
       
       <div class="containerL">
@@ -119,6 +129,14 @@
       <div class="containerR" id="containerR">
         <div id="setores" class="flex-C">
           <p class="textCard">Setores</p>
+          
+        </div>
+        <div id="MudarColuna" class="flex-C">
+          <p class="textCard">Coluna</p>
+          <div class="flex-R backgroundColuna" id="botaoColuna">
+              
+          </div>
+          <br>
         </div>
       </div>
     </div>
@@ -130,45 +148,19 @@
   </div>
 </div>
 
-
-<!--Card expandido-->
-<div id="cardEx" class="cardEx">
-  <div class="cardEx-content flex-CR">
-    <div class="flex-R">
-      <div class="containerL">
-        <div id="responsavel" class="flex-C">
-          <p class="textCard">Responsável</p> 
-        </div>
-        <br>
-        <div id="atividade" class="flex-C">
-          <p class="textCard">Atividades</p> 
-        </div>
-        <br>
-        <div id="descricao" class="flex-C">
-          <p class="textCard">Descrição</p> 
-        </div>
-        <br>
-        <div id="data">
-          
-        </div>
-        
-        
-        
-      </div>
-
-      <div class="containerR">
-        <div id="setores" class="flex-C">
-          <p class="textCard">Setores</p>
-        </div>
-      </div>
+<div id="confirmar" class="confirmar">
+  <div class="confirmar-content flex-C">
+    <div>
+      <p class="textConfirmar">Deseja deletar a tarefa?</h1>
     </div>
-    <div id="cardEx-content">
-      <button class="exitCard" onclick="closeContainer()">X</button>
+    <br>
+    <div class="flex-R">
+      <button class="confirmarButton" onclick="deletar()">
+        <p class="setortext">Deletar</p>
+      </button>
+      <button class="cancelarButton" onclick="cancelar()">
+        <p class="setortext">Cancelar</p>
+      </button>
     </div>
   </div>
-</div>
-
-<div class="flex">
-  
-  
 </div>
